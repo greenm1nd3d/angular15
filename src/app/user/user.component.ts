@@ -1,13 +1,24 @@
 import { Component } from '@angular/core';
 import { from } from 'rxjs';
 
+interface City {
+  id: number,
+  city: string
+}
+
+interface Country {
+  id: number,
+  country: string,
+  cities: City[]
+}
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent {
-  countries = [
+  countries: Country[] = [
     {
       id: 1,
       country: 'Philippines',

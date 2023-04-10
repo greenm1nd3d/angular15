@@ -1,6 +1,29 @@
-<select (change)="selectCountry($event)">
-    <option [value]="country.id" *ngFor="let country of countries">{{country.country}}</option>
-</select>&nbsp;
-<select>
-    <option [value]="city.id" *ngFor="let city of countries[selectedCountry-1].cities">{{city.city}}</option>
-</select>
+<div class="container">
+    <h3>Material UI Select</h3>
+    <p>Using ngModel</p>
+    <mat-form-field appearance="fill">
+        <mat-label>Select Country</mat-label>
+        <mat-select name="country" [(ngModel)]="selectedCountry">
+            <mat-option *ngFor="let country of countries" [value]="country.id">
+                {{country.country}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>&nbsp;
+    <mat-form-field appearance="fill">
+        <mat-label>Select City</mat-label>
+        <mat-select name="city">
+            <mat-option *ngFor="let city of countries[selectedCountry-1].cities" [value]="city.id">
+                {{city.city}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br /><br />
+    <h3>Native HTML Select</h3>
+    <p>Using onChange Event</p>
+    <select (change)="selectCountry($event)">
+        <option [value]="country.id" *ngFor="let country of countries">{{country.country}}</option>
+    </select>&nbsp;
+    <select>
+        <option [value]="city.id" *ngFor="let city of countries[selectedCountry-1].cities">{{city.city}}</option>
+    </select>
+</div>
