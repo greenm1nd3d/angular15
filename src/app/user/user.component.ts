@@ -21,7 +21,7 @@ export class UserComponent {
           city: 'Cebu'
         },
         {
-          id: 31,
+          id: 3,
           city: 'Davao'
         }
       ]
